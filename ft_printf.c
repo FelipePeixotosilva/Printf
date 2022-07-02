@@ -1,1 +1,89 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/02 15:43:30 by fpeixoto          #+#    #+#             */
+/*   Updated: 2022/07/02 19:03:09 by fpeixoto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libftprintf.h"
+
+void ft_putstr(char *s)
+{
+    size_t i;
+
+    i = 0;
+    if(!s[i])
+        return ;
+    while (s[i])
+    {
+        write(1,&s[i],1);
+        i++;
+    }
+}
+void checkV(char c, va_list arg)
+{
+    int v;
+    if(c == 'c')
+    {
+        v = va_arg(arg,int);
+        write(1,&v,1);   
+    }
+    else if(c == 'i' || c == 'd')
+    {
+        v = va_arg(arg,int)+48;
+        write(1,&v,1);
+    }
+    else if(c == '%')
+    {
+        v = va_arg(arg,int);
+        write(1,&v,1);
+    }
+    else if(c == 'u')
+    {
+        v = va_arg(arg,unsigned int) + 48;
+        write(1,&v,1);
+    }
+    else if(c == 's')
+    {
+        ft_putstr(va_arg(arg,char *));
+    }
+    
+}
+int ft_printf(const char *str, ...)
+{
+    va_list arg;
+    size_t i;
+
+    i   =   0;
+    va_start(arg,str);
+    
+    while(str[i])
+    {
+        if(str[i] == '%')
+        {
+            i++;
+            checkV(str[i],arg);
+        }
+        else
+        {
+            write(1,&str[i],1);
+        }
+        i++;
+    }
+    va_end(arg);
+    return (int)i;
+}
+
+int main()
+{
+    char letter = 'J';
+    int  val = -2;
+    char *ptr = "funcionando";
+    ft_printf("fe%cl%so%uk",letter,ptr,val);
+    return 0;
+}
