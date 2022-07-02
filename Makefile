@@ -9,7 +9,7 @@
 #    Updated: 2022/07/02 17:46:40 by fpeixoto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-OBJS  = ft_printf.c
+OBJS	= ft_printf.c
 NAME	= libftprintf.a
 CC		= cc 
 RM		= rm -f 
