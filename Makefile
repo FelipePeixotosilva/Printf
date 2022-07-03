@@ -6,11 +6,11 @@
 #    By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/02 17:45:45 by fpeixoto          #+#    #+#              #
-#    Updated: 2022/07/02 17:46:40 by fpeixoto         ###   ########.fr        #
+#    Updated: 2022/07/03 18:07:42 by fpeixoto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-OBJS	= ft_printf.c
-NAME	= libftprintf.a
+
+NAME	= libftprintd.a
 CC		= cc 
 RM		= rm -f 
 CFLAGS	= -Wall -Wextra -Werror
