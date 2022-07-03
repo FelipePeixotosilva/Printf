@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:40 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/02 15:43:43 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/03 20:00:59 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 #include <stdarg.h>
 
 
-int ft_printf(const char *s, ...);
+int     ft_printf(const char *s, ...);
+void    ft_printnbr(int nbr);
+void    ft_printnbr_u(unsigned int nbru);
+void    ft_putstr(char *s);
+void    printhexa_l(unsigned int nbr);
+void    printhexa_u(unsigned int nbr);
 
 #endif
