@@ -6,13 +6,13 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 19:08:47 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/03 23:30:12 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/04 18:25:26 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void printhexa(unsigned int nbr,char c)
+void ft_printhexa(unsigned int nbr,char c)
 {
     char cnbr;
     
@@ -32,7 +32,7 @@ void printhexa(unsigned int nbr,char c)
     }
     else
     {
-        printhexa(nbr/16,c);
-        printhexa(nbr%16,c);
+        ft_printhexa(nbr / 16,c);
+        ft_printhexa(nbr % 16,c);
     }
 }
