@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-void checkV(char c, va_list arg)
+static void checkV(char c, va_list arg)
 {
     int v;
     char *ptr;
