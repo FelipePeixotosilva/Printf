@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:30 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/03 20:05:21 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/03 21:13:23 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void checkV(char c, va_list arg)
     }
     else if(c == 'p')
     {
-
+        write(1,"0x",3);
+        ft_endpointer(va_arg(arg,unsigned long int));
     }
     else if(c == 'x')
     {
@@ -80,9 +81,9 @@ int ft_printf(const char *str, ...)
 int main()
 {
     char letter = 'J';
-    int  val = -4000;
-    char *ptr = "f";
-    ft_printf("%X\n",-1);
-    printf("Ess.a aqui e a original: %X\n",-1);
+    int  val = 10;
+    char *ptr = "testando";
+    ft_printf("%p\n",ptr);
+    printf("Ess.a aqui e a original: %p\n",ptr);
     return 0;
 }
