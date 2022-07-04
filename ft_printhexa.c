@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printhexa_l.c                                   :+:      :+:    :+:   */
+/*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 19:08:47 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/03 19:30:25 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/03 23:30:12 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void printhexa_l(unsigned int nbr)
+void printhexa(unsigned int nbr,char c)
 {
     char cnbr;
     
@@ -23,12 +23,16 @@ void printhexa_l(unsigned int nbr)
     }
     else if(nbr >= 10 && nbr <= 15)
     {
-        cnbr = nbr + 87;
+        if(c == 'x')
+            cnbr = nbr + 87;
+        else
+            cnbr = nbr + 55;
+            
         write(1,&cnbr,1);        
     }
     else
     {
-        printhexa_l(nbr/16);
-        printhexa_l(nbr%16);
+        printhexa(nbr/16,c);
+        printhexa(nbr%16,c);
     }
 }
