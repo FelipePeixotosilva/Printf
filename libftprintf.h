@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:40 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/03 20:00:59 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/03 21:05:29 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void    ft_printnbr_u(unsigned int nbru);
 void    ft_putstr(char *s);
 void    printhexa_l(unsigned int nbr);
 void    printhexa_u(unsigned int nbr);
+void    ft_endpointer(unsigned long int nbr);
 
 #endif
