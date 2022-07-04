@@ -6,11 +6,11 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 20:58:14 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/03 21:10:59 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/04 18:11:40 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void ft_endpointer(unsigned long int nbr)
 {
@@ -37,5 +37,3 @@ void ft_endpointer(unsigned long int nbr)
     }
     
 }
-
-
