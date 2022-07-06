@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/02 15:43:40 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/04 19:06:41 by fpeixoto         ###   ########.fr       */
+/*   Created: 2022/07/03 18:34:53 by fpeixoto          #+#    #+#             */
+/*   Updated: 2022/07/05 21:10:37 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdarg.h>
+size_t ft_putstr(char *s)
+{
+    size_t i;
 
-
-int     ft_printf(const char *s, ...);
-void    ft_printnbr(int nbr);
-void    ft_printnbr_u(unsigned int nbru);
-size_t    ft_putstr(char *s);
-void    ft_printhexa(unsigned int nbr, char c);
-void    ft_endpointer(unsigned long int nbr);
-
-#endif
+    i = 0;
+    if(s == NULL)
+    {
+        write(1,"(null)",6);
+        return 6;
+    }
+    while (s[i])
+    {
+        write(1,&s[i],1);
+        i++;
+    }
+    return i;
+}
