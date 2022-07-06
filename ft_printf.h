@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:40 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/03 21:05:29 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/05 21:43:35 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-#define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+#define FT_PRINTF_H
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -19,11 +19,10 @@
 
 
 int     ft_printf(const char *s, ...);
-void    ft_printnbr(int nbr);
+size_t  ft_printnbr(int nbr);
 void    ft_printnbr_u(unsigned int nbru);
-void    ft_putstr(char *s);
-void    printhexa_l(unsigned int nbr);
-void    printhexa_u(unsigned int nbr);
+size_t    ft_putstr(char *s);
+size_t    ft_printhexa(unsigned int nbr, char c);
 void    ft_endpointer(unsigned long int nbr);
 
 #endif
