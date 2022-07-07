@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-size_t countc(unsigned int n)
+size_t ft_countc(unsigned int n)
 {
     size_t i;
     i = 0;
@@ -42,6 +42,6 @@ size_t ft_printnbr_u(unsigned int nbru)
         ft_printnbr_u(nbru / 10);
         ft_printnbr_u(nbru % 10);
     }
-  return countc(nbru);      
+  return ft_countc(nbru);      
 }
 
