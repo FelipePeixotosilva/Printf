@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static size_t cchar(int n)
+static size_t ft_countc(int n)
 {
     size_t i;
 
@@ -48,5 +48,5 @@ size_t ft_printnbr(int nbr)
         ft_printnbr(nbr/10);
         ft_printnbr(nbr%10);
     }
-    return cchar(nbr);
+    return ft_countc(nbr);
 }
