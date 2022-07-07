@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:40 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/06 19:08:57 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/06 23:29:41 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ size_t  ft_printnbr(int nbr);
 size_t    ft_printnbr_u(unsigned int nbru);
 size_t    ft_putstr(char *s);
 size_t    ft_printhexa(unsigned int nbr, char c);
-void    ft_endpointer(unsigned long int nbr);
+size_t    ft_endpointer(unsigned long int nbr);
 
 #endif
