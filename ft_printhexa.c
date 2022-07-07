@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-static size_t char_c(unsigned int  n)
+static size_t fr_countc(unsigned int  n)
 {
     size_t i;
 
