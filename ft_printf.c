@@ -6,11 +6,12 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:30 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/05 21:44:29 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/07 00:16:58 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 
 static int	checkv(char c, va_list arg)
 {
@@ -22,19 +23,23 @@ static int	checkv(char c, va_list arg)
 	{
 		v = va_arg (arg, int);
 		write (1, &v, 1);
+		count++;
 	}	
 	else if (c == 'i' || c == 'd')
 		count +=ft_printnbr (va_arg (arg, int));
 	else if (c == '%')
+	{
 		write (1, &c, 1);
+		count++;
+	}
 	else if (c == 'u')
-		ft_printnbr_u (va_arg (arg, unsigned int));
+		count += ft_printnbr_u (va_arg (arg, unsigned int));
 	else if (c == 's')
 		count +=ft_putstr (va_arg (arg, char *));
 	else if (c == 'p')
 	{
-		write (1, "0x", 3);
-		ft_endpointer (va_arg (arg, unsigned long int));
+		//count +=  write (1, "0x", 2);
+		count +=ft_endpointer (va_arg (arg, unsigned long int));
 	}
 	else if (c == 'x' || c == 'X')
 		count += ft_printhexa (va_arg (arg, unsigned int), c);
@@ -59,8 +64,10 @@ int	ft_printf(const char *str, ...)
 
 		}
 		else
+		{
 			write(1, &str[i], 1);
 			count++;
+		}
 	i++;
 	}
 	va_end (arg);
@@ -69,6 +76,6 @@ int	ft_printf(const char *str, ...)
 /*#include <stdio.h>
 int main()
 {
-	ft_printf(" %c", '0' - 256);
-	printf(" %c", '0' - 256);
+	//ft_printf(" %p %p \n", 0, 0);
+	printf(" %p %p ", 0, 0);
 }*/
