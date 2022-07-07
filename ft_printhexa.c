@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-static size_t fr_countc(unsigned int  n)
+static size_t ft_countc(unsigned int  n)
 {
     size_t i;
 
@@ -48,5 +48,5 @@ size_t ft_printhexa(unsigned int nbr,char c)
         ft_printhexa(nbr / 16,c);
         ft_printhexa(nbr % 16,c);
     }
-    return char_c(nbr);
+    return fr_countc(nbr);
 }
