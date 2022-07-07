@@ -12,7 +12,18 @@
 
 #include "ft_printf.h"
 
-void ft_printnbr_u(unsigned int nbru)
+size_t countc(int n)
+{
+    size_t i;
+    i = 0;
+    while(n)
+    {
+      i++;
+      n = n / 10;
+     }
+   return i;
+}
+size_t ft_printnbr_u(unsigned int nbru)
 {
     char cnbr;
     
@@ -25,6 +36,7 @@ void ft_printnbr_u(unsigned int nbru)
     {
         ft_printnbr_u(nbru / 10);
         ft_printnbr_u(nbru % 10);
-    }      
+    }
+  return countc(unbr);      
 }
 
