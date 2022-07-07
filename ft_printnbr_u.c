@@ -6,16 +6,21 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:23:30 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/04 19:25:34 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/06 23:26:03 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t countc(int n)
+size_t countc(unsigned int n)
 {
     size_t i;
     i = 0;
+
+    if(n == 0)
+    {
+      i++;
+    }
     while(n)
     {
       i++;
@@ -37,6 +42,6 @@ size_t ft_printnbr_u(unsigned int nbru)
         ft_printnbr_u(nbru / 10);
         ft_printnbr_u(nbru % 10);
     }
-  return countc(unbr);      
+  return countc(nbru);      
 }
 
