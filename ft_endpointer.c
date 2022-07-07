@@ -6,21 +6,41 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 20:58:14 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/04 18:11:40 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/07 00:18:51 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_endpointer(unsigned long int nbr)
+static size_t char_c(unsigned long int  n)
+{
+    size_t i;
+
+    i = 0;
+    if(n == 0)
+    {
+        i++;
+    }
+    else
+    {
+        while (n)
+        {   
+        i++;
+        n = n / 16;
+        }
+    }
+    return i;
+}
+
+size_t ft_endpointer(unsigned long int nbr)
 {
     char cnbr;
-    
+  
     if(nbr == 'x')
     {
         write(1,"x",1);
     }
-    else if(nbr >= 0 && nbr <= 9)
+    else if(nbr < 10)
     {
         cnbr = nbr + '0';
         write(1,&cnbr,1);    
@@ -35,5 +55,5 @@ void ft_endpointer(unsigned long int nbr)
         ft_endpointer(nbr/16);
         ft_endpointer(nbr%16);
     }
-    
+    return char_c(nbr);
 }
