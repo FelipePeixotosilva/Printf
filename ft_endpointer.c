@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static size_t char_c(unsigned long int  n)
+static size_t ft_countc(unsigned long int  n)
 {
     size_t i;
 
@@ -55,5 +55,5 @@ size_t ft_endpointer(unsigned long int nbr)
         ft_endpointer(nbr/16);
         ft_endpointer(nbr%16);
     }
-    return char_c(nbr);
+    return fr_countc(nbr);
 }
