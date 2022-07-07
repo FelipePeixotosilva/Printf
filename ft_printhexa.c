@@ -6,16 +6,18 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 19:08:47 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/06 20:11:42 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/06 23:47:08 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-static size_t char_c(size_t n)
+static size_t char_c(unsigned int  n)
 {
     size_t i;
 
     i = 0;
+    if(n == 0)
+        i++;
     while (n)
     {
         i++;
@@ -27,9 +29,7 @@ size_t ft_printhexa(unsigned int nbr,char c)
 {
     char cnbr;
     
-    size_t n;
-    n = 0;
-    if(nbr >= 0 && nbr <= 9)
+   if(nbr < 10)
     {
         cnbr = nbr + '0';
         write(1,&cnbr,1);    
