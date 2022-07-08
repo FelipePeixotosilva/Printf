@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:30 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/08 12:56:36 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/08 19:51:35 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	checkv(char c, va_list arg)
 	else if (c == 's')
 		count += ft_putstr (va_arg (arg, char *));
 	else if (c == 'p')
-		count += ft_printendp(va_arg (arg, unsigned long int));
+		count += ft_printp(va_arg (arg, unsigned long int));
 	else if (c == 'x' || c == 'X')
 		count += ft_printhexa (va_arg (arg, unsigned int), c);
 	return (count);
