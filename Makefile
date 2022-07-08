@@ -6,12 +6,12 @@
 #    By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/02 17:45:45 by fpeixoto          #+#    #+#              #
-#    Updated: 2022/07/04 18:21:15 by fpeixoto         ###   ########.fr        #
+#    Updated: 2022/07/08 19:49:48 by fpeixoto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
-SRCS	= ft_endpointer.c ft_printf.c ft_printhexa.c ft_printnbr.c ft_printnbr_u.c ft_putstr.c
+SRCS	= ft_printp.c ft_printf.c ft_printhexa.c ft_printnbr.c ft_printnbr_u.c ft_putstr.c
 OBJS	= $(SRCS:.c=.o)
 CC		= cc 
 RM		= rm -f 
