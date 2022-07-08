@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 19:08:47 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/06 23:47:08 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/07 18:37:48 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ size_t ft_printhexa(unsigned int nbr,char c)
         ft_printhexa(nbr / 16,c);
         ft_printhexa(nbr % 16,c);
     }
-    return fr_countc(nbr);
+    return ft_countc(nbr);
 }
