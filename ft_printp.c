@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printendp.c                                     :+:      :+:    :+:   */
+/*   ft_printp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 20:58:14 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/08 12:56:12 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/08 19:50:30 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static size_t	ft_convp(unsigned long int nbr)
 	return (ft_countc(nbr));
 }
 
-size_t	ft_printendp(unsigned long int n)
+size_t	ft_printp(unsigned long int n)
 {
 	if (n == 0)
 		return (write(1, "(nil)", 5));
