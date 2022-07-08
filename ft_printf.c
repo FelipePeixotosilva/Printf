@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:30 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/07 00:16:58 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/07 21:07:39 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,24 @@ static int	checkv(char c, va_list arg)
 	if (c == 'c')
 	{
 		v = va_arg (arg, int);
-		write (1, &v, 1);
-		count++;
+		count +=write (1, &v, 1);
 	}	
 	else if (c == 'i' || c == 'd')
 		count +=ft_printnbr (va_arg (arg, int));
 	else if (c == '%')
-	{
-		write (1, &c, 1);
-		count++;
-	}
+		count +=write (1, &c, 1);
 	else if (c == 'u')
 		count += ft_printnbr_u (va_arg (arg, unsigned int));
 	else if (c == 's')
 		count +=ft_putstr (va_arg (arg, char *));
 	else if (c == 'p')
 	{
-		//count +=  write (1, "0x", 2);
+		count +=  write (1, "0x", 2);
 		count +=ft_endpointer (va_arg (arg, unsigned long int));
 	}
 	else if (c == 'x' || c == 'X')
 		count += ft_printhexa (va_arg (arg, unsigned int), c);
-	return count;
+	return (count);
 }
 
 int	ft_printf(const char *str, ...)
@@ -76,6 +72,6 @@ int	ft_printf(const char *str, ...)
 /*#include <stdio.h>
 int main()
 {
-	//ft_printf(" %p %p \n", 0, 0);
-	printf(" %p %p ", 0, 0);
+	ft_printf(" %d ", -42);
+	printf(" %d ", -42);
 }*/
