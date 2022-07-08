@@ -44,4 +44,3 @@ size_t ft_printnbr_u(unsigned int nbru)
     }
   return ft_countc(nbru);      
 }
-
