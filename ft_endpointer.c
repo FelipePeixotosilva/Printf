@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 20:58:14 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/07 00:18:51 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/07 18:36:59 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ size_t ft_endpointer(unsigned long int nbr)
         ft_endpointer(nbr/16);
         ft_endpointer(nbr%16);
     }
-    return fr_countc(nbr);
+    return ft_countc(nbr);
 }
