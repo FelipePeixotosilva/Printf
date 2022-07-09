@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 20:58:14 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/08 19:50:30 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/08 20:04:45 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,7 @@ static size_t	ft_convp(unsigned long int nbr)
 {
 	char	cnbr;
 
-	if (nbr == 'x')
-	{
-		write(1, "x", 1);
-	}
-	else if (nbr < 10)
+	if (nbr < 10)
 	{
 		cnbr = nbr + '0';
 		write(1, &cnbr, 1);
