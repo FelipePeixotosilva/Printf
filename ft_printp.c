@@ -6,7 +6,7 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 20:58:14 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/08 20:04:45 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/09 14:30:33 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static size_t	ft_countc(unsigned long int n)
 	return (i);
 }
 
-static size_t	ft_convp(unsigned long int nbr)
+size_t	ft_printp(unsigned long int nbr)
 {
 	char	cnbr;
 
@@ -48,16 +48,8 @@ static size_t	ft_convp(unsigned long int nbr)
 	}
 	else
 	{
-		ft_convp(nbr / 16);
-		ft_convp(nbr % 16);
+		ft_printp(nbr / 16);
+		ft_printp(nbr % 16);
 	}
 	return (ft_countc(nbr));
-}
-
-size_t	ft_printp(unsigned long int n)
-{
-	if (n == 0)
-		return (write(1, "(nil)", 5));
-	else
-		return (write (1, "0x", 2) + ft_convp(n));
 }
