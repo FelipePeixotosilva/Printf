@@ -6,13 +6,13 @@
 /*   By: fpeixoto <fpeixoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:43:30 by fpeixoto          #+#    #+#             */
-/*   Updated: 2022/07/08 19:51:35 by fpeixoto         ###   ########.fr       */
+/*   Updated: 2022/07/09 14:32:26 by fpeixoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	checkv(char c, va_list arg)
+static int	ft_checkv(char c, va_list arg)
 {
 	size_t	count;
 	size_t	v;
@@ -32,7 +32,10 @@ static int	checkv(char c, va_list arg)
 	else if (c == 's')
 		count += ft_putstr (va_arg (arg, char *));
 	else if (c == 'p')
+	{
+		count += write(1, "0x", 2);
 		count += ft_printp(va_arg (arg, unsigned long int));
+	}
 	else if (c == 'x' || c == 'X')
 		count += ft_printhexa (va_arg (arg, unsigned int), c);
 	return (count);
@@ -52,7 +55,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			count += checkv (str[i], arg);
+			count += ft_checkv (str[i], arg);
 		}
 		else
 		{
@@ -67,6 +70,6 @@ int	ft_printf(const char *str, ...)
 /*#include <stdio.h>
 int main()
 {
-	ft_printf(" %d ", -42);
-	printf(" %d ", -42);
+	ft_printf(" %p %p ", 0, 0);
+	printf(" %p %p ", 0, 0);
 }*/
